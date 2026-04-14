@@ -1,0 +1,56 @@
+body {
+    background-color: #f4f7fb;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1f2937;
+}
+
+.custom-navbar {
+    background: linear-gradient(90deg, #0f172a, #1d4ed8);
+}
+
+.hero-section {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+    color: white;
+    padding: 3rem 1rem;
+}
+
+.form-card {
+    max-width: 500px;
+    background: white;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+    border-left: 5px solid #2563eb;
+}
+
+.content-card {
+    background: white;
+    padding: 1.8rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+.table th {
+    background-color: #eff6ff;
+}
+
+.btn-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
