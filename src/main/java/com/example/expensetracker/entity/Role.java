@@ -13,10 +13,10 @@ public class Role {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;  // Primary key
 
     @Column(nullable = false, unique = true, length = 50)
-    private String name;
+    private String name;  // Role name like "ROLE_USER" or "ROLE_ADMIN"
 
     public Role(String name) {
         this.name = name;

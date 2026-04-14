@@ -16,19 +16,19 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;  // Primary key
 
     @Column(name = "full_name", nullable = false, length = 100)
     private String fullName;
 
     @Column(nullable = false, unique = true, length = 100)
-    private String email;
+    private String email;  // Email used for login - must be unique
 
     @Column(nullable = false, length = 255)
-    private String password;
+    private String password;  // Hashed password - never plain text
 
     @Column(nullable = false)
-    private boolean enabled = true;
+    private boolean enabled = true;  // Account active status
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
@@ -36,5 +36,5 @@ public class User {
             joinColumns = @JoinColumn(name = "user_id"),
             inverseJoinColumns = @JoinColumn(name = "role_id")
     )
-    private Set<Role> roles = new HashSet<>();
+    private Set<Role> roles = new HashSet<>();  // Many-to-many relationship with roles
 }

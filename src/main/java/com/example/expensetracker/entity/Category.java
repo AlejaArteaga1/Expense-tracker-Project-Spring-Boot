@@ -13,13 +13,13 @@ public class Category {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;  // Primary key, auto-incremented
 
     @Column(nullable = false, unique = true, length = 50)
-    private String name;
+    private String name;  // Category name - required and must be unique
 
     @Column(length = 255)
-    private String description;
+    private String description;  // Optional category description
 
     public Category(String name, String description) {
         this.name = name;

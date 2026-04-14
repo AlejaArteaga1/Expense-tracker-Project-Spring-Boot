@@ -16,7 +16,7 @@ public class Expense {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long id;  // Primary key
 
     @Column(nullable = false, length = 100)
     private String title;
@@ -25,10 +25,10 @@ public class Expense {
     private String description;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal amount;
+    private BigDecimal amount;  // Expense amount with 2 decimal places for currency
 
     @Column(name = "expense_date", nullable = false)
-    private LocalDate expenseDate;
+    private LocalDate expenseDate;  // When the expense occurred
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
@@ -38,19 +38,19 @@ public class Expense {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    private User user;  // Who owns this expense - Many expenses belong to one User
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "category_id", nullable = false)
-    private Category category;
+    private Category category;  // What category this expense belongs to
 
     @PrePersist
     public void prePersist() {
-        this.createdAt = LocalDateTime.now();
+        this.createdAt = LocalDateTime.now();  // Auto-set creation timestamp
     }
 
     @PreUpdate
     public void preUpdate() {
-        this.updatedAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();  // Auto-update modification timestamp
     }
 }
