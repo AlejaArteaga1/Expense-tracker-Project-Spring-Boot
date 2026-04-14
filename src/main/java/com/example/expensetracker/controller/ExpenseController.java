@@ -1,5 +1,4 @@
 package com.example.expensetracker.controller;
-
 import com.example.expensetracker.dto.ExpenseDto;
 import com.example.expensetracker.entity.Expense;
 import com.example.expensetracker.service.ExpenseService;
@@ -9,7 +8,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -39,10 +37,7 @@ public class ExpenseController {
     }
 
     @PostMapping
-    public String saveExpense(@Valid @ModelAttribute("expenseDto") ExpenseDto expenseDto,
-                              BindingResult result,
-                              Authentication authentication,
-                              Model model) {
+    public String saveExpense(@Valid @ModelAttribute("expenseDto") ExpenseDto expenseDto, BindingResult result, Authentication authentication, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("categories", expenseService.getAllCategories());
             return "expenses/form";
@@ -53,20 +48,14 @@ public class ExpenseController {
     }
 
     @GetMapping("/edit/{id}")
-    public String showEditExpenseForm(@PathVariable Long id,
-                                      Authentication authentication,
-                                      Model model) {
+    public String showEditExpenseForm(@PathVariable Long id, Authentication authentication, Model model) {
         model.addAttribute("expenseDto", expenseService.getExpenseById(id, authentication.getName()));
         model.addAttribute("categories", expenseService.getAllCategories());
         return "expenses/edit-form";
     }
 
     @PostMapping("/update/{id}")
-    public String updateExpense(@PathVariable Long id,
-                                @Valid @ModelAttribute("expenseDto") ExpenseDto expenseDto,
-                                BindingResult result,
-                                Authentication authentication,
-                                Model model) {
+    public String updateExpense(@PathVariable Long id, @Valid @ModelAttribute("expenseDto") ExpenseDto expenseDto, BindingResult result, Authentication authentication, Model model) {
         if (result.hasErrors()) {
             model.addAttribute("categories", expenseService.getAllCategories());
             return "expenses/edit-form";
@@ -83,12 +72,7 @@ public class ExpenseController {
     }
 
     @GetMapping("/search")
-    public String searchExpenses(@RequestParam(required = false) Long categoryId,
-                                 @RequestParam(required = false) LocalDate expenseDate,
-                                 @RequestParam(required = false) LocalDate startDate,
-                                 @RequestParam(required = false) LocalDate endDate,
-                                 Authentication authentication,
-                                 Model model) {
+    public String searchExpenses(@RequestParam(required = false) Long categoryId, @RequestParam(required = false) LocalDate expenseDate, @RequestParam(required = false) LocalDate startDate, @RequestParam(required = false) LocalDate endDate, Authentication authentication, Model model) {
 
         String email = authentication.getName();
         List<Expense> expenses;

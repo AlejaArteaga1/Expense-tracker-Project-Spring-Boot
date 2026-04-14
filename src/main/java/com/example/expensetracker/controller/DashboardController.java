@@ -1,5 +1,4 @@
 package com.example.expensetracker.controller;
-
 import com.example.expensetracker.service.DashboardService;
 import com.example.expensetracker.service.ExpenseService;
 import org.springframework.security.core.Authentication;

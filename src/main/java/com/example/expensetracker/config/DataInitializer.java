@@ -8,7 +8,6 @@ import com.example.expensetracker.repository.UserRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
-
 import java.util.List;
 import java.util.Set;
 
@@ -20,10 +19,7 @@ public class DataInitializer implements CommandLineRunner {
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public DataInitializer(RoleRepository roleRepository,
-                           CategoryRepository categoryRepository,
-                           UserRepository userRepository,
-                           PasswordEncoder passwordEncoder) {
+    public DataInitializer(RoleRepository roleRepository, CategoryRepository categoryRepository, UserRepository userRepository, PasswordEncoder passwordEncoder) {
         this.roleRepository = roleRepository;
         this.categoryRepository = categoryRepository;
         this.userRepository = userRepository;

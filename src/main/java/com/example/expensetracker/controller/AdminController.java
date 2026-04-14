@@ -14,12 +14,12 @@ public class AdminController {
         this.dashboardService = dashboardService;
     }
 
-    @GetMapping("/templates/admin/dashboard")
+    @GetMapping("/admin/dashboard")
     public String adminDashboard(Model model) {
         model.addAttribute("totalUsers", dashboardService.getTotalUsers());
         model.addAttribute("totalExpenses", dashboardService.getTotalExpenses());
         model.addAttribute("systemTotalAmount", dashboardService.getSystemTotalAmount());
 
-        return "templates/admin/dashboard";
+        return "admin/dashboard";
     }
 }

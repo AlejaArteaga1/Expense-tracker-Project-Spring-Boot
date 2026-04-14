@@ -1,5 +1,4 @@
 package com.example.expensetracker.service.impl;
-
 import com.example.expensetracker.dto.RegisterDto;
 import com.example.expensetracker.entity.Role;
 import com.example.expensetracker.entity.User;
@@ -8,7 +7,6 @@ import com.example.expensetracker.repository.UserRepository;
 import com.example.expensetracker.service.UserService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.Set;
 
 @Service
@@ -18,9 +16,7 @@ public class UserServiceImpl implements UserService {
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository,
-                           RoleRepository roleRepository,
-                           PasswordEncoder passwordEncoder) {
+    public UserServiceImpl(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;

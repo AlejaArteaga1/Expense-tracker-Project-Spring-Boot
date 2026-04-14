@@ -1,5 +1,4 @@
 package com.example.expensetracker.controller;
-
 import com.example.expensetracker.dto.RegisterDto;
 import com.example.expensetracker.service.impl.UserServiceImpl;
 import jakarta.validation.Valid;
@@ -24,9 +23,7 @@ public class AuthController {
     }
 
     @PostMapping("/register")
-    public String registerUser(@Valid @ModelAttribute("registerDto") RegisterDto registerDto,
-                               BindingResult result,
-                               Model model) {
+    public String registerUser(@Valid @ModelAttribute("registerDto") RegisterDto registerDto, BindingResult result, Model model) {
 
         if (result.hasErrors()) {
             return "auth/register";

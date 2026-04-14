@@ -1,5 +1,4 @@
 package com.example.expensetracker.service.impl;
-
 import com.example.expensetracker.entity.Expense;
 import com.example.expensetracker.entity.User;
 import com.example.expensetracker.repository.ExpenseRepository;
@@ -7,7 +6,6 @@ import com.example.expensetracker.repository.UserRepository;
 import com.example.expensetracker.service.DashboardService;
 import com.example.expensetracker.service.UserService;
 import org.springframework.stereotype.Service;
-
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.LinkedHashMap;
@@ -21,9 +19,7 @@ public class DashboardServiceImpl implements DashboardService {
     private final UserRepository userRepository;
     private final UserService userService;
 
-    public DashboardServiceImpl(ExpenseRepository expenseRepository,
-                                UserRepository userRepository,
-                                UserService userService) {
+    public DashboardServiceImpl(ExpenseRepository expenseRepository, UserRepository userRepository, UserService userService) {
         this.expenseRepository = expenseRepository;
         this.userRepository = userRepository;
         this.userService = userService;

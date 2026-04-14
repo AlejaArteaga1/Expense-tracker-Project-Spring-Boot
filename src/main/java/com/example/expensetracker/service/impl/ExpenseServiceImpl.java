@@ -9,7 +9,6 @@ import com.example.expensetracker.repository.ExpenseRepository;
 import com.example.expensetracker.service.ExpenseService;
 import com.example.expensetracker.service.impl.UserServiceImpl;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -20,9 +19,7 @@ public class ExpenseServiceImpl implements ExpenseService {
     private final CategoryRepository categoryRepository;
     private final UserServiceImpl userService;
 
-    public ExpenseServiceImpl(ExpenseRepository expenseRepository,
-                              CategoryRepository categoryRepository,
-                              UserServiceImpl userService) {
+    public ExpenseServiceImpl(ExpenseRepository expenseRepository, CategoryRepository categoryRepository, UserServiceImpl userService) {
         this.expenseRepository = expenseRepository;
         this.categoryRepository = categoryRepository;
         this.userService = userService;

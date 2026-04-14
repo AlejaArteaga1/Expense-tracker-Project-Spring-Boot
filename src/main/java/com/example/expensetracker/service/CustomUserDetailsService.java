@@ -1,11 +1,9 @@
 package com.example.expensetracker.service;
-
 import com.example.expensetracker.entity.User;
 import com.example.expensetracker.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.*;
 import org.springframework.stereotype.Service;
-
 import java.util.stream.Collectors;
 
 @Service
